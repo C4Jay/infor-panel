@@ -4,10 +4,17 @@ import VueRouter from 'vue-router'
 import NewTik from '@/components/NewTik'
 import TikView from '@/components/TikView'
 import NewImg from '@/components/NewImg'
+import Home from '@/views/Home'
 
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+
+  },
   {
     path: '/new',
     name: 'NewTik',

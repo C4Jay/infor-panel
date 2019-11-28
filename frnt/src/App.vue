@@ -38,7 +38,9 @@
     </v-app-bar>
 
     <v-content>
+      
       <admin-panel></admin-panel>
+    
     </v-content>
   </v-app>
 </template>
@@ -51,7 +53,7 @@ export default {
   name: 'App',
 
   components: {
-    
+    AdminPanel
   },
 
   data: () => ({
