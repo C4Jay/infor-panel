@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const tikRoutes = require('./exproutes/tikRoutes')
-app.use('/tiks1', tikRoutes);var port = process.env.PORT || 4000;
+app.use('/tiks2', tikRoutes);var port = process.env.PORT || 4001;
 
 
 app.listen(port, function(){
