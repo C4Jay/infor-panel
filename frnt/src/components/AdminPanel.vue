@@ -11,28 +11,40 @@
     </div>
   </v-container>
 <v-container v-else grid-list-xl>
-   <v-row align="center"> 
+   
+     <v-card width="900" color="yellow">
+       <v-card-title> 
+         <v-row align="center">
   <h1>User Info</h1>
-   </v-row>
+  </v-row>
+       </v-card-title>
+   
     <v-layout wrap>
       <table class="table table-hover" id="customers">
             <thead>
             <tr>
                 <td>ID</td>
-                <td>Email ID</td>
+                <td>user-name</td>
+                <td>full-name</td>
+                <td>mail</td>
                 <td>country</td>
+                
             </tr>
             </thead>
             <tbody>
-               <tr v-for="tik in tiks" :key="tik._id">
-                    <td>{{ tik._id }}</td>
-                    <td>{{ tik.mail }}</td>
-                    <td><v-img :src="tik.img"></v-img></td>
-                    <td></td>
+               <tr v-for="user in users" :key="user._id">
+                    <td>{{ user._id }}</td>
+                    <td>{{ user.usrname }}</td>
+                    <td>{{ user.fulname }}</td>
+                    <td>{{ user.mail }}</td>
+                    <td><flag :iso="user.country"/></td>
+            <!--        <td><v-img :src="tik.img"></v-img></td>    -->
+                    
                 </tr>
             </tbody>
         </table>
   </v-layout>
+     </v-card>
   </v-container>
 </template>
 
@@ -46,7 +58,7 @@
     export default {
         data(){
             return{
-                tiks: []
+                users: []
             }
         },
 
@@ -58,9 +70,9 @@
         methods: {
            fetchItems()
            {
-               let uri = 'http://localhost:4000/tiks1';
+               let uri = 'http://localhost:4001/tiks2/';
                this.axios.get(uri).then((response) => {
-                   this.tiks = response.data;
+                   this.users = response.data;
                });
            }
         }

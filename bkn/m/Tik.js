@@ -10,6 +10,9 @@ var Tik = new Schema({
   },
   fulname: {
     type: String
+  },
+  country: {
+    type: String
   }
 },{
     collection: 'tiks2'
